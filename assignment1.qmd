@@ -3,10 +3,171 @@ title: "Assignment 1"
 date: "2022-10-01"
 ---
 
-This is a template example qmd output page. You may see an example R code below.
+## About Me
+
+<div style="text-align: justify">  
+Hi! I am Yaser. After working as a production and planning engineer in different sectors such as automotive, rubber and packaging, currently I am working in a company that monitors and collects global sports data. The project I am responsible for in the company is to list the details obtained by performing analyzes by shooting, game type and game situation, and the collected data is made available to basketball federations, coaches and players. I have been personally interested in data science topics for over two years outside of business life. What interests me most about data science is its capability of creating the future and changing traditional approaches inevitably in different areas. My primary goal for the future works is to use the experience I have gained in production processes as domain knowledge and to work on data-driven projects in the production sector by combining them with the knowledge I will obtain in MEF Big Data Analytics Program.
+
+[<img src="https://www.svgrepo.com/show/303299/linkedin-icon-2-logo.svg" width="30">](https://www.linkedin.com/in/yasergirit/)
+</div><p>
+
+
+
+## rstudio::conf(2022) Advocating for Automation
+
+
+<center><script src="//fast.wistia.com/embed/medias/xsbtzkcrlk.jsonp" async=""></script>
+<script src="//fast.wistia.com/assets/external/E-v1.js" async=""></script>
+<div class="wistia_embed wistia_async_xsbtzkcrlk wistia_embed_initialized" style="height:349px;width:620px" id="wistia-xsbtzkcrlk-1"></div></center><p>
+
+<div style="text-align: justify"> 
+In this session of the conference, Hannah Podzorski talks about how to use R to automate workflows. Automation provides advantages such as reproducibility, simplicity, time saving and less human interaction in processes.
+
+She mentions two important R packages she uses. First one was [{openxlsx}](https://ycphs.github.io/openxlsx/). It designed to edit, read, edit Excel files in R. Other R package she mentioned is [{officer}](https://davidgohel.github.io/officer/) that allows manipulate Word documents and PowerPoint documents in R. She uses it mostly for exporting ggplot to PowerPoint. She shows that adjustments can be made easily with the {officer} on a graph showing the change of chlorine concentration by time.
+
+In a part of her presentation she talks about her team had decided to automate a software named ProUCL that is a statistical software package for analysis of environmental data sets with and without nondetect observations. It developed by the U.S. Environmental Protection Agency (EPA). It shows that they automate the software with mini mouse macros using appropriate functions in R environment. It is generally mentioned that process automations reduce human errors and save time in the presentation. And it seems like how all of this is possible with R.
+
+Source: [https://www.rstudio.com/conference/2022/talks/advocating-for-automation/](https://www.rstudio.com/conference/2022/talks/advocating-for-automation/)
+
+</div>
+
+## R Posts
+
+Following section are about 3 R posts relevant to my interests.
+
+### Audio Classification in R
+
+<div style="text-align: justify"> 
+Not long ago, I have worked on a deep learning project in which urban sounds could be classified with the CNN model as part of a bootcamp and I have run the project in Python environment. You can check it by clicking [here](https://github.com/yasergirit/UrbanSounds8K). So how to advance such a project in the R environment?
+
+In fact, the basic logic in such a project is to visualize the spectral features of the sound, which extracts the frequency and power characteristics and then to classify the extracted features as in image processing techniques.
+
+You can see the details at the link below.
+
+Blog post: [https://blogs.rstudio.com/ai/posts/2018-06-06-simple-audio-classification-keras/](https://blogs.rstudio.com/ai/posts/2018-06-06-simple-audio-classification-keras/)
+</div>
+
+
+### How to Create a Correlation Matrix in R
+
+<div>We know the correlation matrix as a table of correlation coefficients that shows whether there is a relationship between a set of data. It is a powerful tool to summarize a large dataset and to identify and visualize patterns in the given data.
+
+The following 4 different methods of creating a correlation matrix are described in the blog.
+
+- The ```cor``` Function (For getting simple matrix of correlation coefficients)
+- The ```rcorr``` Function (For getting p-values of correlation coefficients)
+- The ```corrplot``` Function (For visualizing correlation matrix)
+- The ```ggcorrplot``` Function (For visualizing correlation matrix)
+
 
 ```{r}
-set.seed(1)
-vec1 <- sample(LETTERS,5)
-paste0(vec1,collapse="")
+#create data frame
+df <- data.frame(assists=c(4, 5, 5, 6, 7, 8, 8, 10),
+                 rebounds=c(12, 14, 13, 7, 8, 8, 9, 13),
+                 points=c(22, 24, 26, 26, 29, 32, 20, 14))
 ```
+
+<center>
+```{r}
+#view dataframe
+df
+```
+</center>
+Let's look at the correlation matrix that shows the correlation coefficients between each variable in the data.
+
+<center>
+```{r}
+#create correlation matrix
+cor(df)
+```
+</center>
+
+The [corrplot](https://github.com/taiyun/corrplot) and [ggcorrplot](https://cran.r-project.org/web/packages/ggcorrplot/readme/README.html) packages make it easy to visualize directly.
+
+```{r}
+install.packages("corrplot")
+library(corrplot)
+```
+
+<center>
+```{r}	
+#visualize correlation matrix
+corrplot(cor(df), method = "color", type="full", addgrid.col = "white",
+        addshade = "positive", addCoef.col = "black")
+```
+</center>
+
+Blog Post: [https://www.statology.org/correlation-matrix-in-r/](https://www.statology.org/correlation-matrix-in-r/)
+</div>
+
+
+### Using dplyr with Databases
+
+<div style="text-align: justify"> In addition to working with data in local memory stored in dataframes, ```dplyr``` also works with data on a remote disk stored in a database.
+
+This is especially useful in two scenarios:
+
+- Your data is already in the database.
+- There is too much data to fit all in memory at once and you must use an external storage mechanism.
+
+[dbplyr](https://dbplyr.tidyverse.org/) package is needed to use databases with dplyr.
+
+```{r}
+install.packages("dbplyr")
+```
+
+Also, DBI backend package is required. The DBI package provides a common interface that allows dplyr to work with different databases using the same code. If it is not already installed, it is automatically installed with the dplyr package.
+
+
+#### Connecting to Database
+
+
+Using ```DBI::dbConnect()``` we can work with databases. The first argument will be the database backend we want to connect to. Five commonly used backends are:
+
+- [RMySQL](https://github.com/rstats-db/RMySQL#readme) connects to MySQL and MariaDB
+
+- [RPostgreSQL](https://cran.r-project.org/package=RPostgreSQL) connects to Postgres and Redshift.
+
+- [RSQLite](https://github.com/rstats-db/RSQLite) embeds a SQLite database.
+
+- [odbc](https://github.com/rstats-db/odbc#odbc) connects to many commercial databases via the open database connectivity protocol.
+
+- [bigrquery](https://github.com/rstats-db/bigrquery) connects to Google's BigQuery.
+
+```#{r}
+library(dplyr)
+con <- DBI::dbConnect(RSQLite::SQLite(), path = ":dbname:")
+```
+
+There are simple code blocks for connecting to database in the rest of the blog post. It seems possible to do this with R codes without having to master the SQL syntax.
+
+```#{r}
+con <- DBI::dbConnect(RMySQL::MySQL(), 
+  host = "database.rstudio.com",
+  user = "hadley",
+  password = rstudioapi::askForPassword("Database password")
+)
+
+```
+
+
+#### Generating Queries
+
+
+dplyr prepares the SQL queries itself, but it is still important to know the SQL language at a basic level.
+
+There is an example below about how to use SQL statements with it.
+
+```#{r}
+flights_db %>% select(year:day, dep_delay, arr_delay)
+
+flights_db %>% filter(dep_delay > 240)
+
+flights_db %>% 
+  group_by(dest) %>%
+  summarise(delay = mean(dep_time))
+```
+
+Blog Post: [https://solutions.rstudio.com/db/r-packages/dplyr/](https://solutions.rstudio.com/db/r-packages/dplyr/)
+
+</div>
