@@ -1,0 +1,42 @@
+---
+title: "In Class Exercise 1"
+date: "2022-10-19"
+---
+
+### Import Required Libraries
+```{r}
+library(nycflights13)
+library(tidyverse)
+```
+
+
+```{r}
+str(flights)
+```
+
+### Analysis 1 - On Time Arrival Rate for Destinations
+<center>
+```{r}
+flights %>%
+  mutate(arr_type = ifelse(arr_delay < 5, "on time", "delayed")) %>%
+  group_by(dest) %>%
+  summarise(count=n(), ot_arr_rate = sum(arr_type == "on time", na.rm=TRUE) / n()*100, "%") %>%
+  arrange(desc(ot_arr_rate)) %>%
+  print(n=25)
+```
+</center>
+
+### Analysis 2 - Departure Delay by Months
+
+<center>
+
+```{r}
+flights %>%
+  group_by(month) %>%
+  summarize(count = n(),
+    avg_dep_delay = mean(dep_delay, na.rm = TRUE),
+    max_dep_delay = max(dep_delay, na.rm = TRUE),
+    min_dep_delay = min(dep_delay, na.rm = TRUE),    
+  )
+```
+</center>
