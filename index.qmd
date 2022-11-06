@@ -5,7 +5,7 @@
 
 This progress journal covers Yaser Girit's work during the term at [BDA 503 Fall 2022](https://mef-bda503.github.io/fall22/).
 
-By clicling the sections left side, you can reach assigments and works.
+By clicking the sections left side, you can reach assigments and works.
 
 <!-- IF THIS IS A GROUP UNCOMMENT BELOW -->
 
