@@ -1,0 +1,12 @@
+---
+title: "Shiny App"
+date: "2022-10-17"
+---
+
+## Foreign Students by Nationality - ShinyApp
+
+<div style="text-align: justify">  
+This application, which works with FluidRows, enables users filtering of foreign student nationality data of universities taken from Higher Education Council’s (YÖK) statistics portal. The desired values can be selected separately from the University Name, University Type, City Name and Nationality columns, or filtering can be done by selecting the entire column. Click on the fluid rows and simply select the values you want. 
+</div>
+
+Application Link: [https://yasergirit.shinyapps.io/ShinyApp/](http://yasergirit.shinyapps.io/ShinyApp)
