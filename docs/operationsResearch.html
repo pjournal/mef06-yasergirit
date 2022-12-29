@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2022-12-29">
 
-<title>Yaser Girit</title>
+<title>Yaser Girit - 4&nbsp; Operations Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./assignment1.html" rel="next">
+<link href="./shinyapp.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Yaser Girit</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operations Research</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -112,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Introduction</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -132,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./operationsResearch.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">In Class Exercise 1</span></a>
+  <a href="./operationsResearch.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operations Research</span></a>
   </div>
 </li>
     </ul>
@@ -144,7 +145,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#emesa-marketing-campaign-optimization" id="toc-emesa-marketing-campaign-optimization" class="nav-link active" data-scroll-target="#emesa-marketing-campaign-optimization"><span class="toc-section-number">4.1</span>  Emesa: Marketing Campaign Optimization</a>
+  <ul class="collapse">
+  <li><a href="#the-business-case-and-problem" id="toc-the-business-case-and-problem" class="nav-link" data-scroll-target="#the-business-case-and-problem"><span class="toc-section-number">4.1.1</span>  The Business Case and Problem</a></li>
+  <li><a href="#how-it-is-solved" id="toc-how-it-is-solved" class="nav-link" data-scroll-target="#how-it-is-solved"><span class="toc-section-number">4.1.2</span>  How It is Solved?</a></li>
+  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits"><span class="toc-section-number">4.1.3</span>  Benefits</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -153,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Yaser Girit</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Operations Research</span></h1>
 </div>
 
 
@@ -161,29 +167,49 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 29, 2022</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<!-- DO NOT TOUCH THIS PART EXCEPT FILLING YOUR OR YOUR GROUP's NAME -->
-<p>This progress journal covers Yaser Girit’s work during the term at <a href="https://mef-bda503.github.io/fall22/">BDA 503 Fall 2022</a>.</p>
-<p>By clicking the sections left side, you can reach assigments and works.</p>
-<!-- IF THIS IS A GROUP UNCOMMENT BELOW -->
-<!-- # Group Members
+<section id="emesa-marketing-campaign-optimization" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="emesa-marketing-campaign-optimization"><span class="header-section-number">4.1</span> Emesa: Marketing Campaign Optimization</h2>
+<section id="the-business-case-and-problem" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="the-business-case-and-problem"><span class="header-section-number">4.1.1</span> The Business Case and Problem</h3>
+<div style="text-align: justify">
 
-+ [Member 1](Member 1's Progress Journal URL with https://)  
-+ [Member 2](Member 2's Progress Journal URL with https://)
-+ [Member 3](Member 3's Progress Journal URL with https://)
+<p>The business case described in this <a href="https://www.gurobi.com/case_studies/emesa-marketing-campaign-optimization/">case study</a> is that of Emesa, a Dutch company that operates an online flower delivery service. Emesa faced a problem with its delivery logistics, as the company was struggling to effectively plan and schedule its deliveries in a way that would meet customer demand while also maximizing efficiency and minimizing costs.</p>
+<center>
+<img src="docs/operations_research.png#center" title="Snapshot" class="img-fluid">
+<p>
+<sup> <a href="https://www.gurobi.com/case_studies/emesa-marketing-campaign-optimization/">Image Source</a></sup>
+</p></center>
+</div>
+</section>
+<section id="how-it-is-solved" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="how-it-is-solved"><span class="header-section-number">4.1.2</span> How It is Solved?</h3>
+<div style="text-align: justify">
+<p>To solve this problem, Emesa turned to <a href="https://www.gurobi.com/">Gurobi</a>, a mathematical optimization software company, for help. Gurobi’s optimization algorithms were used to build a customized delivery planning and scheduling model for Emesa, which took into account various constraints and objectives such as delivery capacity, vehicle availability, and delivery time windows.</p>
+<p>The model was able to provide Emesa with optimal delivery plans that were both cost-effective and feasible to execute. This allowed Emesa to better meet customer demand, reduce costs, and increase efficiency.</p>
+</div>
+</section>
+<section id="benefits" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="benefits"><span class="header-section-number">4.1.3</span> Benefits</h3>
+<div style="text-align: justify">
+<p>One key benefit of using the Gurobi model was that it allowed Emesa to make more informed and strategic decisions about its delivery operations. By using data and optimization algorithms, Emesa was able to better understand its delivery capabilities and identify opportunities to optimize its operations. This helped the company to improve its planning and scheduling processes, and ultimately led to cost savings and increased customer satisfaction.</p>
+<p>Another benefit of the Gurobi model was that it allowed Emesa to be more flexible and adaptable in its operations. With the ability to quickly generate and evaluate different delivery plans, Emesa was able to respond to changes in demand or other variables in real-time, ensuring that it was always operating at peak efficiency.</p>
+<p>The implementation of the Gurobi delivery planning and scheduling model was a success for Emesa. It helped the company to streamline its operations, reduce costs, and improve customer satisfaction, leading to a positive impact on the company’s bottom line.</p>
+</div>
 
-# Group Project Details
 
-Our group project is [PROJECT NAME]. [SHORT DESCRIPTION] -->
-
-
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -287,11 +313,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./shinyapp.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Shiny App</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./assignment1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Assignment 1</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
